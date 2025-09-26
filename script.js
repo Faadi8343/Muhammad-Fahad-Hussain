@@ -8,6 +8,15 @@ document.addEventListener('DOMContentLoaded', function () {
   const nav = document.getElementById('nav');
   navToggle.addEventListener('click', () => {
     nav.classList.toggle('show');
+    navToggle.classList.toggle('active');
+  });
+
+  // Close mobile nav when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!nav.contains(e.target) && !navToggle.contains(e.target)) {
+      nav.classList.remove('show');
+      navToggle.classList.remove('active');
+    }
   });
 
   // Simple client-side form handler: show feedback (server handles actual send)
@@ -30,8 +39,31 @@ document.addEventListener('DOMContentLoaded', function () {
         target.scrollIntoView({behavior:'smooth', block:'start'});
         // close mobile nav on click
         nav.classList.remove('show');
+        navToggle.classList.remove('active');
       }
     });
   });
 
 });
+
+// Theme Toggle
+const themeToggle = document.getElementById("theme-toggle");
+const currentTheme = localStorage.getItem("theme");
+
+if (currentTheme === "dark") {
+  document.body.classList.add("dark");
+  themeToggle.textContent = "☀️";
+}
+
+themeToggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+  
+  if (document.body.classList.contains("dark")) {
+    themeToggle.textContent = "☀️";
+    localStorage.setItem("theme", "dark");
+  } else {
+    themeToggle.textContent = "🌙";
+    localStorage.setItem("theme", "light");
+  }
+});
+n
