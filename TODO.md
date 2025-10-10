@@ -1,0 +1,5 @@
+- [x] Increase opacity of connecting lines in dark mode from 0.2 to 0.5 in script.js
+- [x] Change particle color to white in dark mode for better visibility
+- [x] Change connecting lines color to white in dark mode
+- [x] Set body background to transparent and canvas z-index to -1 to allow animation to show through
+- [x] Make section backgrounds semi-transparent to allow animation visibility in both themes

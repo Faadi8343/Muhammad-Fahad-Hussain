@@ -106,7 +106,7 @@ class Particle {
   }
   draw() {
     ctx.fillStyle = document.body.classList.contains("dark")
-      ? "rgba(0, 200, 255, 0.9)" // cyan in dark mode
+      ? "rgba(255, 255, 255, 0.9)" // white in dark mode
       : "rgba(15, 98, 254, 0.9)"; // blue in light mode
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
@@ -130,7 +130,7 @@ function connectParticles() {
 
       if (dist < 120) { // connect nearby ones
         ctx.strokeStyle = document.body.classList.contains("dark")
-          ? "rgba(0, 200, 255, 0.2)"
+          ? "rgba(255, 255, 255, 0.5)"
           : "rgba(15, 98, 254, 0.2)";
         ctx.lineWidth = 1;
         ctx.beginPath();
