@@ -247,6 +247,14 @@ body.dark .btn.project {
     margin-bottom: 15px;
   }
 
+  .project-visual img {
+    width: 100%;
+    height: auto;
+    max-height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
   .project-visual svg {
     display: block;
     margin: 0 auto;
